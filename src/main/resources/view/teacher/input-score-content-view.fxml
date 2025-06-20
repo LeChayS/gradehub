@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="16">
+    <Label text="Nhập điểm" style="-fx-font-size: 2em; -fx-font-weight: bold;" />
+    <Label text="Nội dung nhập điểm sẽ hiển thị ở đây." />
+</VBox>

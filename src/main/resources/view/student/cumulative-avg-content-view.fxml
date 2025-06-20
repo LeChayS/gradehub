@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.doanjava.gradehub.controller.CumulativeAvgContentController"
+      alignment="CENTER" spacing="16">
+    <Label text="Điểm trung bình tích lũy" style="-fx-font-size: 2em; -fx-font-weight: bold;" />
+    <Label text="Nội dung điểm trung bình tích lũy sẽ hiển thị ở đây." />
+</VBox>

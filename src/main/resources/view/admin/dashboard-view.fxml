@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.doanjava.gradehub.controller.AdminDashboardController"
+    stylesheets="/style/dashboard-view.css"
+    prefWidth="1300" prefHeight="700" minWidth="600" minHeight="400">
+    <children>
+        <!-- Sidebar -->
+        <VBox fx:id="sidebar" styleClass="sidebar" prefWidth="220" maxWidth="220" minWidth="120" spacing="0" alignment="TOP_LEFT">
+            <Label text="GradeHub" styleClass="sidebar-logo" />
+            <VBox styleClass="sidebar-menu" spacing="0">
+                <HBox fx:id="dashboardMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleDashboardMenu">
+                    <Label text="Trang chủ" styleClass="sidebar-menu-text" />
+                </HBox>
+                <HBox fx:id="accountMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleAccountMenu">
+                    <Label text="Quản lý tài khoản" styleClass="sidebar-menu-text" />
+                </HBox>
+                <HBox fx:id="subjectMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleSubjectMenu">
+                    <Label text="Quản lý môn học &amp; lớp học phần" styleClass="sidebar-menu-text" />
+                </HBox>
+                <HBox fx:id="scoreMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleScoreMenu">
+                    <Label text="Quản lý điểm số" styleClass="sidebar-menu-text" />
+                </HBox>
+                <HBox fx:id="configMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleConfigMenu">
+                    <Label text="Cấu hình năm học, học kỳ" styleClass="sidebar-menu-text" />
+                </HBox>
+            </VBox>
+            <Label text="Help &amp; Support" styleClass="sidebar-help-label" />
+            <Separator />
+            <!-- User Info Below Separator -->
+            <VBox styleClass="sidebar-userbox" alignment="CENTER_LEFT" spacing="8" VBox.vgrow="NEVER">
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <ImageView fitWidth="36" fitHeight="36" preserveRatio="true" styleClass="sidebar-avatar" />
+                    <Label text="User Name" styleClass="sidebar-user" />
+                </HBox>
+                <HBox fx:id="notificationMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleNotificationMenu">
+                    <Label text="🔔" styleClass="sidebar-menu-icon" />
+                    <Label text="Thông báo" styleClass="sidebar-menu-text" />
+                </HBox>
+                <HBox fx:id="settingMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleSettingMenu">
+                    <Label text="⚙" styleClass="sidebar-menu-icon" />
+                    <Label text="Cài đặt" styleClass="sidebar-menu-text" />
+                </HBox>
+            </VBox>
+            <!-- Bottom Menu -->
+            <VBox styleClass="sidebar-bottom" alignment="BOTTOM_LEFT" spacing="0" VBox.vgrow="ALWAYS">
+                <HBox fx:id="changePasswordMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleChangePasswordMenu">
+                    <Label text="🔒" styleClass="sidebar-menu-icon" />
+                    <Label text="Đổi mật khẩu" styleClass="sidebar-menu-text" />
+                </HBox>
+                <HBox fx:id="logoutMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleLogoutMenu">
+                    <Label text="🚪" styleClass="sidebar-menu-icon" />
+                    <Label text="Đăng xuất" styleClass="sidebar-menu-text" />
+                </HBox>
+            </VBox>
+        </VBox>
+        <!-- Main Content Placeholder -->
+        <StackPane fx:id="mainContentPane" styleClass="main-content" HBox.hgrow="ALWAYS">
+            <Label text="Chào mừng đến với Dashboard!" styleClass="main-title" />
+        </StackPane>
+    </children>
+</HBox>

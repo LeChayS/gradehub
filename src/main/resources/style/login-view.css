@@ -1,0 +1,93 @@
+/* Root background color */
+.hbox {
+    -fx-background-color: #f0f0f0;
+}
+
+/* Login card styles */
+.login-card {
+    -fx-background-color: white;
+    -fx-padding: 24px 20px 24px 20px;
+    -fx-spacing: 16px;
+    /* -fx-max-width: 100%; */
+    max-width: 100%;
+    /* -fx-min-width: 300px; */
+    /* min-width: 200px; */
+}
+
+/* Title */
+.login-title {
+    -fx-font-size: 3vw;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+/* Labels */
+.login-label {
+    -fx-font-size: 1.2vw;
+    -fx-text-fill: #555;
+}
+
+/* Login button */
+.login-button {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: white;
+    -fx-font-size: 1.2vw;
+    -fx-background-radius: 8;
+    -fx-padding: 0.8em 0;
+    -fx-max-width: 300px;
+    -fx-pref-width: 100%;
+}
+
+/* Background image for right pane */
+.login-bg-pane {
+    -fx-background-image: url('../asset/image/login-bg-crop.jpg');
+    -fx-background-size: cover;
+    -fx-background-position: right;
+    /*-fx-min-width: 200px;*/
+}
+
+.error-label {
+    -fx-text-fill: #d32f2f;
+    -fx-font-size: 0.95em;
+    -fx-padding: 4px 0 0 0;
+}
+
+/* --- Dashboard Responsive Sidebar --- */
+.sidebar {
+    -fx-background-color: #222e3c;
+    -fx-pref-width: 220px;
+    -fx-max-width: 220px;
+    -fx-min-width: 180px;
+    -fx-effect: dropshadow(gaussian, #b0b0b0, 10, 0.2, 0, 2);
+}
+.hamburger-btn {
+    -fx-font-size: 2em;
+    -fx-background-color: transparent;
+    -fx-text-fill: #222e3c;
+    -fx-cursor: hand;
+    -fx-padding: 8px 16px;
+    -fx-border-width: 0;
+    -fx-alignment: center-left;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        -fx-visible: false;
+        -fx-managed: false;
+    }
+    .hamburger-btn {
+        -fx-visible: true;
+        -fx-managed: true;
+    }
+}
+
+@media screen and (min-width: 701px) {
+    .sidebar {
+        -fx-visible: true;
+        -fx-managed: true;
+    }
+    .hamburger-btn {
+        -fx-visible: false;
+        -fx-managed: false;
+    }
+}
