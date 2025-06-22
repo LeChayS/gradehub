@@ -45,7 +45,6 @@ public class StudentDashboardController {
     private Button logoutBtn;
 
     private List<HBox> menuItems;
-    private String role = "student"; // default
 
     @FXML
     private void initialize() {
@@ -53,31 +52,31 @@ public class StudentDashboardController {
         menuItems = Arrays.asList(dashboardMenu, resultMenu, semesterAvgMenu, cumulativeAvgMenu, notificationMenu, settingMenu, changePasswordMenu);
         // Load dashboard by default
         setSelectedMenu(dashboardMenu);
-        loadContent("/view/" + role + "/dashboard-content-view.fxml");
+        loadContent("/view/student/dashboard-content-view.fxml");
     }
 
     @FXML
     private void handleDashboardMenu(MouseEvent event) {
         setSelectedMenu(dashboardMenu);
-        loadContent("/view/" + role + "/dashboard-content-view.fxml");
+        loadContent("/view/student/dashboard-content-view.fxml");
     }
 
     @FXML
     private void handleResultMenu(MouseEvent event) {
         setSelectedMenu(resultMenu);
-        loadContent("/view/" + role + "/result-content-view.fxml");
+        loadContent("/view/student/result-content-view.fxml");
     }
 
     @FXML
     private void handleSemesterAvgMenu(MouseEvent event) {
         setSelectedMenu(semesterAvgMenu);
-        loadContent("/view/" + role + "/semester-avg-content-view.fxml");
+        loadContent("/view/student/semester-avg-content-view.fxml");
     }
 
     @FXML
     private void handleCumulativeAvgMenu(MouseEvent event) {
         setSelectedMenu(cumulativeAvgMenu);
-        loadContent("/view/" + role + "/cumulative-avg-content-view.fxml");
+        loadContent("/view/student/cumulative-avg-content-view.fxml");
     }
 
     @FXML
@@ -129,6 +128,4 @@ public class StudentDashboardController {
             e.printStackTrace();
         }
     }
-
-    public void setRole(String role) { this.role = role; }
 }

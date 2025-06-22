@@ -25,12 +25,6 @@ public class AdminDashboardController {
     @FXML
     private HBox dashboardMenu;
     @FXML
-    private HBox resultMenu;
-    @FXML
-    private HBox semesterAvgMenu;
-    @FXML
-    private HBox cumulativeAvgMenu;
-    @FXML
     private HBox changePasswordMenu;
     @FXML
     private HBox logoutMenu;
@@ -57,7 +51,7 @@ public class AdminDashboardController {
     @FXML
     private void initialize() {
         menuItems = Arrays.asList(dashboardMenu, accountMenu, subjectMenu, scoreMenu, configMenu, notificationMenu, settingMenu, changePasswordMenu);
-        setSelectedMenu(accountMenu);
+        setSelectedMenu(dashboardMenu);
         loadContent("/view/admin/dashboard-content-view.fxml");
     }
 

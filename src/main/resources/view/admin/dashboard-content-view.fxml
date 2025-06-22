@@ -5,5 +5,5 @@
       fx:controller="com.doanjava.gradehub.controller.DashboardContentController"
       alignment="CENTER" spacing="16">
     <Label text="Dashboard" style="-fx-font-size: 2em; -fx-font-weight: bold;" />
-    <Label text="Nội dung tổng quan sẽ hiển thị ở đây." />
+    <Label text="Nội dung tổng quan của admin sẽ hiển thị ở đây." />
 </VBox>
