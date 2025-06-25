@@ -1,0 +1,85 @@
+/* --- Student Dashboard Content View Styles --- */
+.dashboard-content-root {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 32px 0;
+    -fx-spacing: 32px;
+}
+
+.overview-card {
+    -fx-background-color: #fff;
+    -fx-padding: 28px 40px;
+    -fx-border-radius: 18px;
+    -fx-effect: dropshadow(gaussian, #b0b0b0, 12, 0.10, 0, 2);
+    -fx-max-width: 900px;
+    -fx-alignment: center;
+}
+.overview-panel {
+    -fx-spacing: 48px;
+    -fx-alignment: center;
+}
+.overview-value {
+    -fx-font-size: 2.3em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0854ab;
+    -fx-padding: 0 0 4px 0;
+}
+.overview-label {
+    -fx-font-size: 1em;
+    -fx-text-fill: #6b7a90;
+    -fx-font-weight: 500;
+}
+.overview-warning {
+    -fx-font-size: 2em;
+    -fx-text-fill: #e53935;
+    -fx-padding: 0 0 4px 0;
+    -fx-effect: dropshadow(gaussian, #e53935, 6, 0.15, 0, 2);
+}
+
+.section-card {
+    -fx-background-color: #fff;
+    -fx-padding: 24px 32px 24px 32px;
+    -fx-border-radius: 16px;
+    -fx-effect: dropshadow(gaussian, #e3eaf6, 8, 0.10, 0, 2);
+    -fx-max-width: 900px;
+    -fx-spacing: 10px;
+}
+.section-title {
+    -fx-font-size: 1.3em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0854ab;
+    -fx-padding: 0 0 8px 0;
+    -fx-letter-spacing: 0.5px;
+}
+
+.dashboard-table {
+    -fx-background-color: #fff;
+    -fx-border-radius: 12px;
+    -fx-padding: 8px;
+    -fx-effect: dropshadow(gaussian, #e3eaf6, 6, 0.10, 0, 2);
+    -fx-table-cell-border-color: #e3eaf6;
+    -fx-table-header-border-color: #e3eaf6;
+    -fx-font-size: 1em;
+}
+.dashboard-table .column-header-background {
+    -fx-background-color: #f7f9fb;
+    -fx-border-radius: 12px 12px 0 0;
+}
+.dashboard-table .column-header, .dashboard-table .filler {
+    -fx-size: 36px;
+    -fx-font-size: 1em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0854ab;
+}
+.dashboard-table .table-row-cell {
+    -fx-background-color: #fff;
+    -fx-border-color: #e3eaf6;
+    -fx-border-width: 0 0 1px 0;
+    -fx-font-size: 1em;
+}
+.dashboard-table .table-row-cell:selected {
+    -fx-background-color: #e3eaf6;
+}
+.dashboard-table .table-cell {
+    -fx-padding: 8px 4px;
+    -fx-text-fill: #222e3c;
+}

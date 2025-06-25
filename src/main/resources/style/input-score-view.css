@@ -1,0 +1,15 @@
+/* input-score-view.css */
+.inputview-btn {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8 24;
+    -fx-font-size: 1em;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 2, 0, 0, 1);
+    -fx-height: 20px;
+}
+.filter-btn:hover {
+    -fx-background-color: #1565c0;
+}

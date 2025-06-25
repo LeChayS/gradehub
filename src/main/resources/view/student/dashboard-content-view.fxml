@@ -1,9 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.doanjava.gradehub.controller.DashboardContentController"
-      alignment="CENTER" spacing="16">
-    <Label text="Dashboard" style="-fx-font-size: 2em; -fx-font-weight: bold;" />
-    <Label text="Nội dung tổng quan của sinh viên sẽ hiển thị ở đây." />
+    fx:controller="com.doanjava.gradehub.controller.student.DashboardContentController"
+    alignment="TOP_CENTER" spacing="32" stylesheets="/style/dashboard-content-view.css">
+    <!-- Overview Panel -->
+    <StackPane styleClass="overview-card">
+        <HBox spacing="40" alignment="CENTER" styleClass="overview-panel">
+            <VBox alignment="CENTER">
+                <Label fx:id="totalSubjectsLabel" text="12" styleClass="overview-value"/>
+                <Label text="Môn đã học" styleClass="overview-label"/>
+            </VBox>
+            <VBox alignment="CENTER">
+                <Label fx:id="gpaLabel" text="3.45" styleClass="overview-value"/>
+                <Label text="GPA" styleClass="overview-label"/>
+            </VBox>
+            <VBox alignment="CENTER">
+                <Label fx:id="completedCreditsLabel" text="90" styleClass="overview-value"/>
+                <Label text="Tín chỉ hoàn thành" styleClass="overview-label"/>
+            </VBox>
+            <VBox alignment="CENTER">
+                <Label fx:id="missingSubjectsLabel" text="2" styleClass="overview-value"/>
+                <Label text="Môn còn thiếu/nợ" styleClass="overview-label"/>
+            </VBox>
+            <VBox alignment="CENTER">
+                <Label fx:id="warningIcon" text="⚠️" styleClass="overview-warning" visible="false"/>
+                <Label text="Cảnh báo" styleClass="overview-label"/>
+            </VBox>
+        </HBox>
+    </StackPane>
+
+    <!-- Recent Grades Table -->
+    <VBox spacing="10" alignment="TOP_CENTER" styleClass="section-card">
+        <Label text="Bảng điểm gần đây" styleClass="section-title"/>
+        <TableView fx:id="recentGradesTable" prefHeight="180" styleClass="dashboard-table">
+            <columns>
+                <TableColumn fx:id="subjectNameCol" text="Tên môn" prefWidth="200"/>
+                <TableColumn fx:id="midtermScoreCol" text="Điểm giữa kỳ" prefWidth="100"/>
+                <TableColumn fx:id="finalScoreCol" text="Điểm cuối kỳ" prefWidth="100"/>
+                <TableColumn fx:id="totalScoreCol" text="Điểm tổng kết" prefWidth="100"/>
+                <TableColumn fx:id="gradeLetterCol" text="Xếp loại" prefWidth="70"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Current Subjects Table -->
+    <VBox spacing="10" alignment="TOP_CENTER" styleClass="section-card">
+        <Label text="Môn học hiện tại" styleClass="section-title"/>
+        <TableView fx:id="currentSubjectsTable" prefHeight="180" styleClass="dashboard-table">
+            <columns>
+                <TableColumn fx:id="currentSubjectNameCol" text="Tên môn" prefWidth="200"/>
+                <TableColumn fx:id="subjectCodeCol" text="Mã môn" prefWidth="100"/>
+                <TableColumn fx:id="classCol" text="Lớp" prefWidth="100"/>
+                <TableColumn fx:id="teacherCol" text="Giảng viên" prefWidth="200"/>
+                <TableColumn fx:id="quickAccessCol" text="Truy cập" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </VBox>
 </VBox>

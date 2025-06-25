@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Label?>
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="16">
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.doanjava.gradehub.controller.teacher.InputScoreContentController"
+    alignment="CENTER" spacing="16" style="-fx-padding: 24;"
+    stylesheets="/style/input-score-view.css">
     <Label text="Nhập điểm" style="-fx-font-size: 2em; -fx-font-weight: bold;" />
-    <Label text="Nội dung nhập điểm sẽ hiển thị ở đây." />
+    <!-- Filter Section -->
+    <HBox spacing="8" alignment="CENTER_LEFT" style="-fx-padding: 0 0 8 0;">
+        <Label text="Năm học:" />
+        <ComboBox fx:id="yearCombo" promptText="Năm học" />
+        <Label text="Học kỳ:" />
+        <ComboBox fx:id="semesterCombo" promptText="Học kỳ" />
+    </HBox>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Label text="Môn học:" />
+        <ComboBox fx:id="subjectCombo" promptText="Môn học" />
+        <Label text="Lớp học phần:" />
+        <ComboBox fx:id="classCombo" promptText="Lớp học phần" />
+        <Label text="Tiết học từ:" />
+        <TextField fx:id="lessonBeginField" promptText="Bắt đầu (1-12)" maxWidth="60" />
+        <Label text="đến" />
+        <TextField fx:id="lessonEndField" promptText="Kết thúc (1-12)" maxWidth="60" />
+        <Label text="Ngày:" />
+        <DatePicker fx:id="datePicker" promptText="Chọn ngày" />
+        <Button text="Lọc" fx:id="filterButton" styleClass="inputview-btn" />
+    </HBox>
+    <TableView fx:id="studentScoreTable" editable="true" prefHeight="300" prefWidth="700">
+        <columns>
+            <TableColumn fx:id="studentIdCol" text="Mã SV" prefWidth="70" />
+            <TableColumn fx:id="studentNameCol" text="Tên sinh viên" prefWidth="200" />
+            <TableColumn fx:id="attendanceScoreCol" text="Điểm chuyên cần" prefWidth="150" />
+            <TableColumn fx:id="midtermScoreCol" text="Điểm giữa kỳ" prefWidth="150" />
+            <TableColumn fx:id="finalScoreCol" text="Điểm cuối kỳ" prefWidth="150" />
+        </columns>
+    </TableView>
+    <Button text="Lưu điểm" fx:id="saveButton" styleClass="inputview-btn"/>
 </VBox>

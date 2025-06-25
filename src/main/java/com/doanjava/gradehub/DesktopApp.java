@@ -1,7 +1,6 @@
 package com.doanjava.gradehub;
 
 import java.io.IOException;
-import java.util.Objects;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -23,15 +22,20 @@ public class DesktopApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/login-view.fxml"));
-        // FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/dashboard-view.fxml"));
-        Scene scene = new Scene(loader.load());
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/style/style.css")).toExternalForm());
+        //view đăng nhập
+        // FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/login-view.fxml"));
 
+        //view giáo viên
+        // FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/teacher/dashboard-view.fxml"));
+
+        //view sinh viên
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/student/dashboard-view.fxml"));
+
+        Scene scene = new Scene(loader.load());
         stage.setMinWidth(600);
         stage.setMinHeight(400);
         // stage.setMaximized(true);
-        stage.setTitle("Đăng nhập");
+        stage.setTitle("GradeHub - Đăng nhập");
         stage.setScene(scene);
         stage.show();
     }

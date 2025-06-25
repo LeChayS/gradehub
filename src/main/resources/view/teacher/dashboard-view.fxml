@@ -12,45 +12,47 @@
     prefWidth="1300" prefHeight="700" minWidth="600" minHeight="400">
     <children>
         <!-- Sidebar -->
-        <VBox fx:id="sidebar" styleClass="sidebar" prefWidth="220" maxWidth="220" minWidth="120" spacing="0" alignment="TOP_LEFT">
-            <Label text="GradeHub" styleClass="sidebar-logo" />
-            <VBox styleClass="sidebar-menu" spacing="0">
-                <HBox fx:id="homeMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleHomeMenu">
-                    <Label text="Trang chủ" styleClass="sidebar-menu-text" />
-                </HBox>
-                <HBox fx:id="inputScoreMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleInputScoreMenu">
-                    <Label text="Nhập điểm" styleClass="sidebar-menu-text" />
-                </HBox>
+        <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="sidebar-scroll">
+            <VBox fx:id="sidebar" styleClass="sidebar" prefWidth="220" maxWidth="220" minWidth="120" spacing="0" alignment="TOP_LEFT">
+                <Label text="GradeHub" styleClass="sidebar-logo" />
+                <VBox styleClass="sidebar-menu" spacing="0">
+                    <HBox fx:id="homeMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleHomeMenu">
+                        <Label text="Trang chủ" styleClass="sidebar-menu-text" />
+                    </HBox>
+                    <HBox fx:id="inputScoreMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleInputScoreMenu">
+                        <Label text="Nhập điểm" styleClass="sidebar-menu-text" />
+                    </HBox>
+                </VBox>
+                <Label text="Help &amp; Support" styleClass="sidebar-help-label" />
+                <Separator />
+                <!-- User Info Below Separator -->
+                <VBox styleClass="sidebar-userbox" alignment="CENTER_LEFT" spacing="8" VBox.vgrow="NEVER">
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <ImageView fitWidth="36" fitHeight="36" preserveRatio="true" styleClass="sidebar-avatar" />
+                        <Label text="User Name" styleClass="sidebar-user" />
+                    </HBox>
+                    <HBox fx:id="notificationMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleNotificationMenu">
+                        <Label text="🔔" styleClass="sidebar-menu-icon" />
+                        <Label text="Thông báo" styleClass="sidebar-menu-text" />
+                    </HBox>
+                    <HBox fx:id="settingMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleSettingMenu">
+                        <Label text="⚙" styleClass="sidebar-menu-icon" />
+                        <Label text="Cài đặt" styleClass="sidebar-menu-text" />
+                    </HBox>
+                </VBox>
+                <!-- Bottom Menu -->
+                <VBox styleClass="sidebar-bottom" alignment="BOTTOM_LEFT" spacing="0" VBox.vgrow="ALWAYS">
+                    <HBox fx:id="changePasswordMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleChangePasswordMenu">
+                        <Label text="🔒" styleClass="sidebar-menu-icon" />
+                        <Label text="Đổi mật khẩu" styleClass="sidebar-menu-text" />
+                    </HBox>
+                    <HBox fx:id="logoutMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleLogoutMenu">
+                        <Label text="🚪" styleClass="sidebar-menu-icon" />
+                        <Label text="Đăng xuất" styleClass="sidebar-menu-text" />
+                    </HBox>
+                </VBox>
             </VBox>
-            <Label text="Help &amp; Support" styleClass="sidebar-help-label" />
-            <Separator />
-            <!-- User Info Below Separator -->
-            <VBox styleClass="sidebar-userbox" alignment="CENTER_LEFT" spacing="8" VBox.vgrow="NEVER">
-                <HBox spacing="8" alignment="CENTER_LEFT">
-                    <ImageView fitWidth="36" fitHeight="36" preserveRatio="true" styleClass="sidebar-avatar" />
-                    <Label text="User Name" styleClass="sidebar-user" />
-                </HBox>
-                <HBox fx:id="notificationMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleNotificationMenu">
-                    <Label text="🔔" styleClass="sidebar-menu-icon" />
-                    <Label text="Thông báo" styleClass="sidebar-menu-text" />
-                </HBox>
-                <HBox fx:id="settingMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleSettingMenu">
-                    <Label text="⚙" styleClass="sidebar-menu-icon" />
-                    <Label text="Cài đặt" styleClass="sidebar-menu-text" />
-                </HBox>
-            </VBox>
-            <!-- Bottom Menu -->
-            <VBox styleClass="sidebar-bottom" alignment="BOTTOM_LEFT" spacing="0" VBox.vgrow="ALWAYS">
-                <HBox fx:id="changePasswordMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleChangePasswordMenu">
-                    <Label text="🔒" styleClass="sidebar-menu-icon" />
-                    <Label text="Đổi mật khẩu" styleClass="sidebar-menu-text" />
-                </HBox>
-                <HBox fx:id="logoutMenu" styleClass="sidebar-menu-item" onMouseClicked="#handleLogoutMenu">
-                    <Label text="🚪" styleClass="sidebar-menu-icon" />
-                    <Label text="Đăng xuất" styleClass="sidebar-menu-text" />
-                </HBox>
-            </VBox>
-        </VBox>
+        </ScrollPane>
         <!-- Main Content Placeholder -->
         <StackPane fx:id="mainContentPane" styleClass="main-content" HBox.hgrow="ALWAYS">
             <Label text="Chào mừng đến với Dashboard!" styleClass="main-title" />

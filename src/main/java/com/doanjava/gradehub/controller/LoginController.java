@@ -1,9 +1,15 @@
 package com.doanjava.gradehub.controller;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.Properties;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -19,6 +25,11 @@ public class LoginController {
 
     @FXML
     private Label errorLabel;
+
+    @FXML
+    private CheckBox rememberMeCheckBox;
+
+    private static final String REMEMBER_FILE = System.getProperty("user.home") + File.separator + ".gradehub_rememberme.properties";
 
     @FXML
     private void handleLogin() {
@@ -41,6 +52,13 @@ public class LoginController {
 
         if (fxmlPath != null) {
             try {
+                // Remember Me logic
+                if (rememberMeCheckBox.isSelected()) {
+                    saveRememberedEmail(email);
+                } else {
+                    clearRememberedEmail();
+                }
+
                 final String finalRole = role;
                 final String finalFxmlPath = fxmlPath;
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(finalFxmlPath));
@@ -76,6 +94,46 @@ public class LoginController {
             errorLabel.setVisible(false);
             errorLabel.setText("");
         });
+        // Enable login on Enter key
+        emailField.setOnAction(e -> handleLogin());
+        passwordField.setOnAction(e -> handleLogin());
+        // Load remembered email
+        String remembered = loadRememberedEmail();
+        if (remembered != null) {
+            emailField.setText(remembered);
+            rememberMeCheckBox.setSelected(true);
+        }
+    }
+
+    private String loadRememberedEmail() {
+        try {
+            File file = new File(REMEMBER_FILE);
+            if (file.exists()) {
+                Properties props = new Properties();
+                try (FileInputStream fis = new FileInputStream(file)) {
+                    props.load(fis);
+                }
+                return props.getProperty("email");
+            }
+        } catch (Exception ignored) {}
+        return null;
+    }
+
+    private void saveRememberedEmail(String email) {
+        try {
+            Properties props = new Properties();
+            props.setProperty("email", email);
+            try (FileOutputStream fos = new FileOutputStream(REMEMBER_FILE)) {
+                props.store(fos, "GradeHub Remember Me");
+            }
+        } catch (Exception ignored) {}
+    }
+
+    private void clearRememberedEmail() {
+        try {
+            File file = new File(REMEMBER_FILE);
+            if (file.exists()) file.delete();
+        } catch (Exception ignored) {}
     }
 }
 
