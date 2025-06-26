@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.doanjava.gradehub.controller.ResultContentController"
-      alignment="CENTER" spacing="16">
-    <Label text="Kết quả học tập" style="-fx-font-size: 2em; -fx-font-weight: bold;" />
-    <Label text="Nội dung kết quả học tập sẽ hiển thị ở đây." />
+
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.doanjava.gradehub.controller.student.ResultContentController"
+      spacing="10" alignment="TOP_CENTER">
+
+    <Label text="BẢNG ĐIỂM HỌC KỲ" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <TableView fx:id="gradeTable" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="colCode" text="Mã Môn" prefWidth="100"/>
+            <TableColumn fx:id="colName" text="Tên Môn" prefWidth="200"/>
+            <TableColumn fx:id="colCredits" text="Tín chỉ" prefWidth="50"/>
+            <TableColumn fx:id="colMidterm" text="Giữa kì" prefWidth="60"/>
+            <TableColumn fx:id="colFinal" text="Cuối kì" prefWidth="60"/>
+            <TableColumn fx:id="colTotal" text="Tổng" prefWidth="60"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="20">
+        <Label fx:id="labelCredits" text="Tín chỉ: 0"/>
+        <Label fx:id="labelGPA" text="GPA: 0.0"/>
+    </HBox>
+
 </VBox>
