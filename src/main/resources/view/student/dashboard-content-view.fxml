@@ -7,29 +7,25 @@
 <?import javafx.scene.control.TableColumn?>
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
     fx:controller="com.doanjava.gradehub.controller.student.DashboardContentController"
-    alignment="TOP_CENTER" spacing="32" stylesheets="/style/dashboard-content-view.css">
+    alignment="TOP_CENTER" spacing="32" stylesheets="/style/student-dashboard-content-view.css">
     <!-- Overview Panel -->
-    <StackPane styleClass="overview-card">
+    <StackPane>
         <HBox spacing="40" alignment="CENTER" styleClass="overview-panel">
-            <VBox alignment="CENTER">
+            <VBox alignment="CENTER" styleClass="overview-card">
                 <Label fx:id="totalSubjectsLabel" text="12" styleClass="overview-value"/>
                 <Label text="Môn đã học" styleClass="overview-label"/>
             </VBox>
-            <VBox alignment="CENTER">
+            <VBox alignment="CENTER" styleClass="overview-card">
                 <Label fx:id="gpaLabel" text="3.45" styleClass="overview-value"/>
                 <Label text="GPA" styleClass="overview-label"/>
             </VBox>
-            <VBox alignment="CENTER">
+            <VBox alignment="CENTER" styleClass="overview-card">
                 <Label fx:id="completedCreditsLabel" text="90" styleClass="overview-value"/>
                 <Label text="Tín chỉ hoàn thành" styleClass="overview-label"/>
             </VBox>
-            <VBox alignment="CENTER">
+            <VBox alignment="CENTER" styleClass="overview-card">
                 <Label fx:id="missingSubjectsLabel" text="2" styleClass="overview-value"/>
                 <Label text="Môn còn thiếu/nợ" styleClass="overview-label"/>
-            </VBox>
-            <VBox alignment="CENTER">
-                <Label fx:id="warningIcon" text="⚠️" styleClass="overview-warning" visible="false"/>
-                <Label text="Cảnh báo" styleClass="overview-label"/>
             </VBox>
         </HBox>
     </StackPane>

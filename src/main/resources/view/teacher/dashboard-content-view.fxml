@@ -9,60 +9,63 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-    fx:controller="com.doanjava.gradehub.controller.teacher.DashboardContentController"
-    alignment="TOP_CENTER" spacing="24" style="-fx-padding: 24;">
-    <!-- Quick Overview Section -->
-    <TitledPane text="Tổng quan nhanh" expanded="true">
-        <HBox alignment="CENTER" spacing="32" style="-fx-padding: 16;">
-            <VBox alignment="CENTER">
-                <Label text="Tổng số lớp đang giảng dạy" style="-fx-font-weight: bold;" />
-                <Label fx:id="totalClassesLabel" text="0" style="-fx-font-size: 1.5em;" />
-            </VBox>
-            <VBox alignment="CENTER">
-                <Label text="Tổng số môn học đang phụ trách" style="-fx-font-weight: bold;" />
-                <Label fx:id="totalSubjectsLabel" text="0" style="-fx-font-size: 1.5em;" />
-            </VBox>
-            <VBox alignment="CENTER">
-                <Label text="Số sinh viên đang phụ trách" style="-fx-font-weight: bold;" />
-                <Label fx:id="totalStudentsLabel" text="0" style="-fx-font-size: 1.5em;" />
-            </VBox>
-        </HBox>
-    </TitledPane>
+    fx:controller="com.doanjava.gradehub.controller.teacher.DashboardContentController" stylesheets="/style/teacher-dashboard-content-view.css" alignment="TOP_CENTER" spacing="20">
 
-    <!-- Subjects in Charge Section -->
-    <TitledPane text="Danh sách môn học đang phụ trách" expanded="true">
-        <TableView fx:id="subjectsTable" prefHeight="200">
-            <columns>
-                <TableColumn text="Tên môn" fx:id="subjectNameCol" />
-                <TableColumn text="Mã môn" fx:id="subjectCodeCol" />
-                <TableColumn text="Học kỳ" fx:id="semesterCol" />
-                <TableColumn text="Lớp đang dạy" fx:id="classCol" />
-                <TableColumn text="" fx:id="enterGradeCol" />
-                <TableColumn text="" fx:id="viewClassCol" />
-            </columns>
-        </TableView>
-    </TitledPane>
+        <!-- Overview Panel -->
+            <StackPane>
+                <HBox spacing="40" alignment="CENTER" styleClass="overview-panel">
+                    <VBox alignment="CENTER" styleClass="overview-card">
+                        <Label fx:id="totalClassesLabel" text="0" styleClass="overview-value"/>
+                        <Label text="Tổng số lớp đang giảng dạy" styleClass="overview-label"/>
+                    </VBox>
+                    <VBox alignment="CENTER" styleClass="overview-card">
+                        <Label fx:id="totalSubjectsLabel" text="0" styleClass="overview-value"/>
+                        <Label text="Tổng số môn học đang phụ trách" styleClass="overview-label"/>
+                    </VBox>
+                    <VBox alignment="CENTER" styleClass="overview-card">
+                        <Label fx:id="totalStudentsLabel" text="0" styleClass="overview-value"/>
+                        <Label text="Số sinh viên đang phụ trách" styleClass="overview-label"/>
+                    </VBox>
+                </HBox>
+            </StackPane>
 
-    <!-- Grade Management Section -->
-    <TitledPane text="Quản lý nhập điểm" expanded="true">
-        <VBox spacing="12" style="-fx-padding: 8;">
-            <HBox spacing="8" alignment="CENTER_LEFT">
-                <Label text="Lọc theo:" />
-                <ComboBox fx:id="filterSemesterCombo" promptText="Học kỳ" />
-                <ComboBox fx:id="filterSubjectCombo" promptText="Môn học" />
-                <ComboBox fx:id="filterClassCombo" promptText="Lớp" />
-                <Button text="Lọc" fx:id="filterButton" />
-            </HBox>
-            <TableView fx:id="gradeManagementTable" prefHeight="180">
-                <columns>
-                    <TableColumn text="Môn học" fx:id="gmSubjectCol" />
-                    <TableColumn text="Lớp" fx:id="gmClassCol" />
-                    <TableColumn text="Học kỳ" fx:id="gmSemesterCol" />
-                    <TableColumn text="Trạng thái nhập điểm" fx:id="gmStatusCol" />
-                    <TableColumn text="" fx:id="gmEnterGradeCol" />
-                </columns>
-            </TableView>
-        </VBox>
-    </TitledPane>
+            <!-- Subjects in Charge Section -->
+            <VBox spacing="10" alignment="TOP_CENTER" styleClass="section-card">
+                <Label text="Danh sách môn học đang phụ trách" style="-fx-font-size: 1.3em; -fx-font-weight: bold;"/>
+                <TableView fx:id="subjectsTable" prefHeight="300">
+                    <columns>
+                        <TableColumn text="Tên môn" fx:id="subjectNameCol" />
+                        <TableColumn text="Mã môn" fx:id="subjectCodeCol" />
+                        <TableColumn text="Học kỳ" fx:id="semesterCol" />
+                        <TableColumn text="Lớp đang dạy" fx:id="classCol" />
+                        <TableColumn text="" fx:id="enterGradeCol" />
+                        <TableColumn text="" fx:id="viewClassCol" />
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- Grade Management Section -->
+            <VBox spacing="10" alignment="TOP_CENTER" styleClass="section-card">
+                <Label text="Quản lý nhập điểm" style="-fx-font-size: 1.3em; -fx-font-weight: bold;"/>
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Lọc theo:" />
+                    <ComboBox fx:id="filterYearCombo" promptText="Năm học" />
+                    <ComboBox fx:id="filterSemesterCombo" promptText="Học kỳ" />
+                    <ComboBox fx:id="filterSubjectCombo" promptText="Môn học" />
+                    <ComboBox fx:id="filterClassCombo" promptText="Lớp" />
+                    <Button text="Lọc" fx:id="filterButton" />
+                </HBox>
+                <TableView fx:id="gradeManagementTable" prefHeight="300">
+                    <columns>
+                        <TableColumn text="Môn học" fx:id="gmSubjectCol" />
+                        <TableColumn text="Lớp" fx:id="gmClassCol" />
+                        <TableColumn text="Học kỳ" fx:id="gmSemesterCol" />
+                        <TableColumn text="Trạng thái nhập điểm" fx:id="gmStatusCol" />
+                        <TableColumn text="" fx:id="gmEnterGradeCol" />
+                    </columns>
+                </TableView>
+            </VBox>
+
 </VBox>
