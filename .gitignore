@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### BMAD ###
+.bmad-core/
+.cursor/
+# .cursorrules/
+web-bundles/

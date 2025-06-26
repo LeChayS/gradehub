@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="16">
-    <Label text="Quản lý tài khoản" style="-fx-font-size: 2em; -fx-font-weight: bold;" />
-    <Label text="Nội dung quản lý tài khoản sẽ hiển thị ở đây." />
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.doanjava.gradehub.controller.AccountContentController"
+      spacing="16" styleClass="account-mgmt-root">
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+    <children>
+        <!-- Thanh trên: Tìm kiếm, Lọc, Thêm -->
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <children>
+                <TextField fx:id="searchField" promptText="Tìm kiếm theo email hoặc vai trò..." maxWidth="250" />
+                <ComboBox fx:id="roleFilterCombo" promptText="Vai trò" prefWidth="120" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button fx:id="addAccountBtn" text="Thêm tài khoản" graphicTextGap="8" />
+            </children>
+        </HBox>
+        <!-- Bảng tài khoản -->
+        <TableView fx:id="accountTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="emailCol" text="Email" prefWidth="220" />
+                <TableColumn fx:id="roleCol" text="Vai trò" prefWidth="100" />
+                <TableColumn fx:id="createdCol" text="Ngày tạo" prefWidth="140" />
+                <TableColumn fx:id="actionsCol" text="Thao tác" prefWidth="200" />
+            </columns>
+        </TableView>
+        <!-- Trạng thái rỗng -->
+        <Label fx:id="emptyStateLabel" text="Không tìm thấy tài khoản nào. Vui lòng thay đổi bộ lọc hoặc từ khóa tìm kiếm." visible="false" styleClass="empty-state-label" />
+    </children>
+    <!-- Nơi chèn dialog động -->
 </VBox>

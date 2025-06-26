@@ -16,7 +16,7 @@ public class DesktopApp extends Application {
 
     @Override
     public void init() {
-        context = new SpringApplicationBuilder(com.doanjava.gradehub.MySpringBootApplication.class)
+        context = new SpringApplicationBuilder(GradehubApplication.class)
                 .headless(false)
                 .run();
     }
