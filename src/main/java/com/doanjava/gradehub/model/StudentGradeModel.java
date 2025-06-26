@@ -6,26 +6,19 @@ public class StudentGradeModel {
     private int credits;
     private double midterm;
     private double finalExam;
-    private double total;
+    private String academicYear;
+    private String semester;
 
-    public StudentGradeModel(String subjectCode, String subjectName, int credits, double midterm, double finalExam) {
+    public StudentGradeModel(String subjectCode, String subjectName, int credits, double midterm, double finalExam, String academicYear, String semester) {
         this.subjectCode = subjectCode;
         this.subjectName = subjectName;
         this.credits = credits;
         this.midterm = midterm;
         this.finalExam = finalExam;
+        this.academicYear = academicYear;
+        this.semester = semester;
+
     }
-
-    // public StudentGradeModel(String subjectCode, String subjectName, int credits, double midterm, double finalExam,
-    //         double total) {
-    //     this.subjectCode = subjectCode;
-    //     this.subjectName = subjectName;
-    //     this.credits = credits;
-    //     this.midterm = midterm;
-    //     this.total = total;
-    // }
-
-    // Getters & Setters (JavaFX cần getter để binding vào TableView)
 
     public String getSubjectCode() {
         return subjectCode;
@@ -47,10 +40,15 @@ public class StudentGradeModel {
         return finalExam;
     }
 
-    public double getTotal() {
-        double midtermExam = getMidterm();
-        double finalExam = getFinalExam();
+    public String getAcademicYear() {
+        return academicYear;
+    }
 
-        return midtermExam * 0.3 + finalExam * 0.7;
+    public String getSemester() {
+        return semester;
+    }
+
+    public double getTotal() {
+        return midterm * 0.3 + finalExam * 0.7;
     }
 }
