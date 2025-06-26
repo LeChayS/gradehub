@@ -31,7 +31,7 @@
     </StackPane>
 
     <!-- Recent Grades Table -->
-    <VBox spacing="10" alignment="TOP_CENTER" styleClass="section-card">
+    <VBox spacing="10" alignment="TOP_LEFT" styleClass="section-card">
         <Label text="Bảng điểm gần đây" styleClass="section-title"/>
         <TableView fx:id="recentGradesTable" prefHeight="180" styleClass="dashboard-table">
             <columns>
@@ -45,7 +45,7 @@
     </VBox>
 
     <!-- Current Subjects Table -->
-    <VBox spacing="10" alignment="TOP_CENTER" styleClass="section-card">
+    <VBox spacing="10" alignment="TOP_LEFT" styleClass="section-card">
         <Label text="Môn học hiện tại" styleClass="section-title"/>
         <TableView fx:id="currentSubjectsTable" prefHeight="180" styleClass="dashboard-table">
             <columns>

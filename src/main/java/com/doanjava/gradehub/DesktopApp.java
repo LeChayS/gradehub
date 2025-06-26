@@ -26,10 +26,10 @@ public class DesktopApp extends Application {
         // FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/login-view.fxml"));
 
         //view giáo viên
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/teacher/dashboard-view.fxml"));
+        // FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/teacher/dashboard-view.fxml"));
 
         //view sinh viên
-        // FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/student/dashboard-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/student/dashboard-view.fxml"));
 
         Scene scene = new Scene(loader.load());
         stage.setMinWidth(600);

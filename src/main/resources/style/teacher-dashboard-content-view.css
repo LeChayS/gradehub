@@ -51,12 +51,12 @@
 .section-title {
     -fx-font-size: 1.3em;
     -fx-font-weight: bold;
-    -fx-text-fill: #0854ab;
+    /* -fx-text-fill: #0854ab; */
     -fx-padding: 0 0 8px 0;
     -fx-letter-spacing: 0.5px;
 }
 
-.dashboard-table {
+/* .dashboard-table {
     -fx-background-color: #fff;
     -fx-border-radius: 12px;
     -fx-padding: 8px;
@@ -93,7 +93,7 @@
 .dashboard-table .table-cell {
     -fx-padding: 8px 4px;
     -fx-text-fill: #222e3c;
-}
+} */
 
 .inputview-btn {
     -fx-background-color: #1976d2;
